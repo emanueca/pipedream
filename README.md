@@ -1,98 +1,236 @@
-<p align="center">
-    <img src="URL_DA_SUA_LOGO_AQUI" width="400px" alt="DevPath Logo">
-</p>
+![pipedream](https://i.ibb.co/LPhXtH1/logo.png)
 
 <p align="center">
-    <a href="https://github.com/SEU_USUARIO/DevPath/blob/main/LICENSE"><img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg?style=flat-square"></a>
-  <a href="https://github.com/SEU_USUARIO/DevPath/graphs/contributors"><img src="https://img.shields.io/badge/contributors-wanted-brightgreen.svg?style=flat-square"></a>
-  <a href="https://github.com/SEU_USUARIO/DevPath/issues"><img src="https://img.shields.io/github/issues/SEU_USUARIO/DevPath?style=flat-square"></a>
-  <a href="URL_DO_SEU_PIPELINE_DE_BUILD"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square"></a>
+  <a href="https://pipedream.com/community"><img src="https://img.shields.io/badge/discourse-forum-brightgreen.svg?style=flat-square&link=https%3A%2F%2Fpipedream.com%2Fcommunity)](https://pipedream.com/community"></a>
+  <a href="https://pipedream.com/support"><img src="https://img.shields.io/badge/-Join%20us%20on%20Slack-green?logo=slack&logoColor=34d28B&labelColor=150d11&color=34d28B&logoWidth=18&link=https%3A%2F%2Fpipedream.com%2Fsupport&link=https%3A%2F%2Fpipedream.com%2Fsupport)](https://pipedream.com/support"></a>
+  <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F%3FbuttonType%3DFollowButton%26query%3Dhttps%253A%252F%252Ftwitter.com%252Fpipedream%26widget%3DButton&ref_src=twsrc%5Etfw&region=follow_link&screen_name=pipedream&tw_p=followbutton"><img src="https://img.shields.io/twitter/follow/pipedream?label=Follow%20%40pipedream&style=social"></a>
+  <a href="https://wellfound.com/company/pipedreamhq/jobs"><img src="https://img.shields.io/badge/%F0%9F%91%8B%F0%9F%8F%BC%20We're%20hiring!-Join%20us-brightgreen"></a>
 </p>
 
-DevPath é uma plataforma de curadoria focada em **resultados profissionais** para desenvolvedores no ecossistema de código aberto (OSS).
+Pipedream is an integration platform for developers.
 
-Nosso foco é o resultado profissional. Ao utilizar o DevPath, você não está apenas resolvendo *issues*; você está **construindo ativamente um portfólio de contribuições verificáveis**. A experiência adquirida em projetos open source reais é um diferencial competitivo significativo no mercado de tecnologia.
+Pipedream provides a free, hosted platform for connecting apps and developing event-driven automations. The platform has over 1,000 fully-integrated applications, so you can use pre-built components to quickly send messages to Slack, add a new row to Google Sheets, and more. You can also run any Node.js, Python, Golang, or Bash code when you need custom logic. Pipedream has demonstrated SOC 2 compliance and can provide a SOC 2 Type 2 report upon request (please email support@pipedream.com).
 
 <p align="center">
-  <br />
-    <img src="URL_DE_UM_SCREENSHOT_DA_UI.png" width="800px" alt="Screenshot da plataforma DevPath mostrando as trilhas de issues" >
-  <br />
+  <br />
+  <img src="./images/hero2.png" width="800px" alt="HTTP trigger + step selection menu" >
+  <br />
 </p>
 
-Este repositório contém:
+This repo contains:
 
-- [O código-fonte do `backend` (crawler, API)](https://github.com/SEU_USUARIO/DevPath/tree/main/backend)
-- [O código-fonte do `frontend` (aplicação web)](https://github.com/SEU_USUARIO/DevPath/tree/main/frontend)
-- [A documentação do projeto](https://github.com/SEU_USUARIO/DevPath/tree/main/docs)
-- [O roadmap público e issues](https://github.com/SEU_USUARIO/DevPath/issues)
+- [The code for all pre-built integration components](https://github.com/PipedreamHQ/pipedream/tree/master/components)
+- [The product roadmap](https://github.com/PipedreamHQ/pipedream/issues)
+- [The Pipedream docs](https://github.com/PipedreamHQ/pipedream/tree/master/docs)
+- And other source code related to Pipedream.
 
-Para sugestões, dúvidas ou para reportar um bug, por favor, [abra uma issue](https://github.com/SEU_USUARIO/DevPath/issues/new/choose).
+This `README` explains the key features of the platform and how to get started.
 
-## ✨ Funcionalidades Principais
+To get support, please visit [https://pipedream.com/support](https://pipedream.com/support).
 
-- **Foco no Portfólio:** Nosso objetivo não é que você resolva *issues*, mas que construa um histórico de contribuições relevantes.
-- **Trilhas de Progressão:** Guiamos você desde sua primeira contribuição até desafios de alta complexidade.
-- **Curadoria de Issues:** Indexamos e classificamos *issues* de projetos reais para que você encontre o desafio certo para seu nível.
-- **Certificados de Conclusão:** (Em breve) Valide suas habilidades ao completar *issues* na trilha "Complexa".
-- **👻 Ghost Issues:** Uma categoria especial para os desafios mais difíceis — *issues* que foram abandonadas e precisam de um especialista.
-- **Gratuito para Desenvolvedores:** Focado na comunidade e no crescimento profissional.
+## Key Features
 
-## 🚀 Como Funciona: De Contribuidor a Profissional
+- [Workflows](#workflows) - Workflows run automations. Workflows are sequences of steps - pre-built actions or custom [Node.js](https://pipedream.com/docs/code/nodejs/), [Python](https://pipedream.com/docs/code/python/), [Golang](https://pipedream.com/docs/code/go/), or [Bash](https://pipedream.com/docs/code/bash/) code - triggered by an event (HTTP request, timer, when a new row is added to a Google Sheets, and more).
+- [Event Sources](#event-sources) - Sources trigger workflows. They emit events from services like GitHub, Slack, Airtable, RSS and [more](https://pipedream.com/apps). When you want to run a workflow when an event happens in any third-party app, you're using an event source.
+- [Actions](#actions) - Actions are pre-built code steps that you can use in a workflow to perform common operations across Pipedream's 1,000+ API integrations. For example, you can use actions to send email, add a row to a Google Sheet, [and more](https://pipedream.com/apps).
+- [Custom code](#code) - Most integrations require custom logic. Code is often the best way to express that logic, so Pipedream allows you to run any [Node.js](https://pipedream.com/docs/code/nodejs/), [Python](https://pipedream.com/docs/code/python/), [Golang](https://pipedream.com/docs/code/go/), or [Bash](https://pipedream.com/docs/code/bash/) code. You can import any package from the languages' package managers, connect to any Pipedream connected app, and more. Pipedream is "low-code" in the best way: you can use pre-built components when you're performing common actions, but you can write custom code when you need to.
+- [Destinations](#destinations) - Deliver events asynchronously to common destinations like Amazon S3, Snowflake, HTTP and email.
+- [Free](#pricing) - No fees for individual developers (see [limits](https://docs.pipedream.com/limits/))
 
-O DevPath foi projetado para ser o seu guia de carreira no mundo open source. Em vez de simplesmente listar "good first issues", nós criamos um caminho.
+## Demo
 
-### 1. Trilha Comum
+Click the image below to watch a brief demo on YouTube.
 
-Estas são as "good first issues" clássicas, revisadas e validadas. São perfeitas para entender o fluxo de um projeto, fazer seu primeiro Pull Request e ganhar confiança. O foco aqui é **quebrar a barreira de entrada**.
+<p align="center">
+  <br />
+  <a href="https://bit.ly/3ytGgyR">
+    <img src="./images/demo.png" width="800px" alt="Pipedream demo static image" />
+  </a>
+</p>
 
-### 2. Trilha Complexa
+### Workflows
 
-Aqui é onde seu portfólio começa a brilhar. São *features* ou bugs mais substanciais que exigem pesquisa, dedicação e interação real com os mantenedores.
-* **Construa Reputação:** Resolver *issues* complexas é a forma mais rápida de ser notado em uma comunidade.
-* **Ganhe Certificados:** (Em breve) Ao ter seu PR aprovado em uma *issue* desta trilha, você receberá um certificado de conclusão do DevPath, validando seu esforço.
+Workflows are sequences of linear [steps](https://pipedream.com/docs/workflows/steps) triggered by an event (like an HTTP request, or when a new row is added to a Google sheet). You can quickly develop complex automations using workflows and connect to any of our 1,000+ integrated apps.
 
-### 3. 👻 Ghost Issues (A Trilha Fantasma)
+[See our workflow quickstart](https://pipedream.com/docs/quickstart/) to get started.
 
-Esta é a nossa categoria de elite. "Ghost Issues" são problemas reais que outros desenvolvedores tentaram resolver e falharam. São *issues* com PRs abandonados ou que se provaram difíceis demais e se tornaram "fantasmas" no repositório.
+### Event Sources
 
-Resolver uma *Ghost Issue* não é apenas uma contribuição; é uma demonstração de senioridade e persistência.
+[Event Sources](https://pipedream.com/docs/sources/) watch for new data from services like GitHub, Slack, Airtable, RSS and [more](https://pipedream.com/apps). When a source finds a new event, it emits it, triggering any linked workflows.
 
-## 🛠️ Stack Tecnológica (Exemplo)
+You can also consume events emitted by sources using [Pipedream's REST API](https://pipedream.com/docs/api/rest/) or a private, real-time [SSE stream](https://pipedream.com/docs/api/sse/).
 
-O DevPath é construído com foco em escalabilidade e uma experiência de usuário moderna.
+When a pre-built source doesn't exist for your use case, [you can build your own](https://pipedream.com/docs/components/quickstart/nodejs/sources/). Here is the simplest event source: it exposes an HTTP endpoint you can send any request to, and prints the contents of the request when invoked:
 
-* **Frontend:** [Next.js / React]
-* **Backend:** [Node.js (Fastify) / Go]
-* **Banco de Dados:** [PostgreSQL]
-* **Crawler / Jobs:** [BullMQ / Redis]
+```javascript
+export default {
+  name: "http",
+  version: "0.0.1",
+  props: {
+    http: "$.interface.http",
+  },
+  run(event) {
+    console.log(event); // event contains the method, payload, etc.
+  },
+};
+```
 
-## 💖 Contribuidores
+<a href="https://pipedream.com/sources/new?app=http"><img src="https://i.ibb.co/m0bBsSL/deploy-clean.png" height="35"></a>
 
-Obrigado a todos que dedicaram seu tempo para contribuir com o DevPath!
+You can find the code for all pre-built sources in [the `components` directory](https://github.com/PipedreamHQ/pipedream/tree/master/components). If you find a bug or want to contribute a feature, [see our contribution guide](https://pipedream.com/docs/components/guidelines/#process).
 
-<a href="https://github.com/SEU_USUARIO/DevPath/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SEU_USUARIO/DevPath" />
+### Actions
+
+[Actions](https://pipedream.com/docs/components/actions/) are pre-built code steps that you can use in a workflow to perform common operations across Pipedream's 500+ API integrations. For example, you can use actions to send email, add a row to a Google Sheet, [and more](https://pipedream.com/apps).
+
+You can [create your own actions](https://pipedream.com/docs/components/quickstart/nodejs/actions/), which you can re-use across workflows. You can also [publish actions to the entire Pipedream community](https://pipedream.com/docs/components/guidelines/), making them available for anyone to use.
+
+Here's an action that accepts a `name` as input and prints it to the workflow's logs:
+
+```javascript
+export default {
+  name: "Action Demo",
+  description: "This is a demo action",
+  key: "action_demo",
+  version: "0.0.1",
+  type: "action",
+  props: {
+    name: {
+      type: "string",
+      label: "Name",
+    },
+  },
+  async run() {
+    return `hello ${this.name}!`;
+  },
+};
+```
+
+You can find the code for all pre-built actions in [the `components` directory](https://github.com/PipedreamHQ/pipedream/tree/master/components). If you find a bug or want to contribute a feature, [see our contribution guide](https://pipedream.com/docs/components/guidelines/#process).
+
+### Custom code
+
+Most integrations require custom logic. Code is often the best way to express that logic, so Pipedream allows you to run custom code in a workflow using:
+
+<table align="center">
+  <tr>
+    <td>
+      <a href="https://pipedream.com/docs/code/nodejs/">
+        <img alt="Node.js" src="https://res.cloudinary.com/pipedreamin/image/upload/v1646761316/docs/icons/icons8-nodejs_aax6wn.svg" width="100">
+      </a>
+    </td>
+    <td>
+      <a href="https://pipedream.com/docs/code/python/">
+        <img alt="Python" src="https://res.cloudinary.com/pipedreamin/image/upload/v1647356607/docs/icons/python-logo-generic_k3o5w2.svg" width="100">
+      </a>
+    </td>
+  </tr>
+  </tr>
+    <td>
+      <a href="https://pipedream.com/docs/code/go/">
+        <img alt="Go" src="https://res.cloudinary.com/pipedreamin/image/upload/v1646763751/docs/icons/Go-Logo_Blue_zhkchv.svg" width="100">
+      </a>
+    </td>
+    <td>
+      <a href="https://pipedream.com/docs/code/bash/">
+        <img alt="Bash" src="https://res.cloudinary.com/pipedreamin/image/upload/v1647356698/docs/icons/full_colored_dark_1_-svg_vyfnv7.svg" width="100">
+      </a>
+    </td>
+  </tr>
+</table>
+
+You can import any package from the languages' package managers by declaring the imports directly in code. Pipedream will parse and download the necessary dependencies.
+
+```javascript
+// Node.js
+import axios from "axios";
+```
+
+```python
+# Python
+import pandas as pd
+```
+
+```golang
+// Go
+import (
+    "fmt"
+    pd "github.com/PipedreamHQ/pipedream-go"
+)
+```
+
+You can also [connect to any Pipedream connected app in custom code steps](https://pipedream.com/docs/code/nodejs/auth/). For example, you can connect your Slack account and send a message to a channel:
+
+```javascript
+import { WebClient } from "@slack/web-api";
+
+export default defineComponent({
+  props: {
+    // This creates a connection called "slack" that connects a Slack account.
+    slack: {
+      type: "app",
+      app: "slack",
+    },
+  },
+  async run({ steps, $ }) {
+    const web = new WebClient(this.slack.$auth.oauth_access_token);
+
+    return await web.chat.postMessage({
+      text: "Hello, world!",
+      channel: "#general",
+    });
+  },
+});
+```
+
+### Destinations
+
+[Destinations](https://pipedream.com/docs/destinations/), like actions, abstract the connection, batching, and delivery logic required to send events to services like Amazon S3, or targets like HTTP and email.
+
+For example, sending data to an Amazon S3 bucket is as simple as calling `$send.s3()`:
+
+```javascript
+$send.s3({
+  bucket: "your-bucket-here",
+  prefix: "your-prefix/",
+  payload: event.body,
+});
+```
+
+Pipedream supports the following destinations:
+
+- [Amazon S3](https://docs.pipedream.com/destinations/s3/)
+- [Snowflake](https://docs.pipedream.com/destinations/snowflake/)
+- [HTTP](https://docs.pipedream.com/destinations/http/)
+- [Email](https://docs.pipedream.com/destinations/email/)
+- [SSE](https://docs.pipedream.com/destinations/sse/)
+
+## Contributors
+
+Thank you to everyone who has contributed to the Pipedream codebase. We appreciate you!
+
+<a href="https://github.com/PipedreamHQ/pipedream/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=PipedreamHQ/pipedream" />
 </a>
 
-## 💸 Preço
+## Pricing
 
-O DevPath é, e sempre será, **gratuito para desenvolvedores**. Nosso modelo de negócio é focado em [a ser definido: empresas que buscam talentos, etc.].
+Pipedream has a [generous free tier](https://pipedream.com/docs/pricing/#developer-tier). You can run sources and workflows for free within the limits of the free tier. If you hit these limits, you can upgrade to one of our [paid tiers](https://pipedream.com/docs/pricing/).
 
-## 🤝 Como Contribuir / Reportar um Bug
+## Limits
 
-Encontrou um bug ou tem uma ideia para uma nova funcionalidade? Nós adoraríamos sua ajuda!
+The Pipedream platform imposes some runtime limits on sources and workflows. [Read more about those in our docs](https://pipedream.com/docs/limits/).
 
-O DevPath também é open source. Contribuir para nossa plataforma é uma ótima forma de praticar!
+## Found a Bug? Have a Feature to suggest?
 
-1.  Antes de adicionar uma issue, por favor, [procure por issues existentes](https://github.com/SEU_USUARIO/DevPath/issues) para evitar duplicatas.
-2.  Se não existir, [abra uma nova issue](https://github.com/SEU_USUARIO/DevPath/issues/new/choose) usando nossos templates.
-3.  Se você deseja contribuir com código:
-    * Faça um `Fork` deste repositório.
-    * Crie uma nova branch: `git checkout -b feature/sua-feature`
-    * Faça o `commit` de suas mudanças: `git commit -m 'Adiciona feature X'`
-    * Envie para a branch: `git push origin feature/sua-feature`
-    * Abra um `Pull Request`.
+Before adding an issue, please search the [existing issues](https://github.com/PipedreamHQ/pipedream/issues) or [reach out to our team](https://pipedream.com/support/) to see if a similar request already exists.
 
-## ⚖️ Licença
+If an issue exists, please [add a reaction](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-conversations-on-github) or add a comment detailing your specific use case.
 
-Distribuído sob a Licença GNU. Veja `LICENSE.md` para mais informações.
+If an issue _doesn't_ yet exist and you need to create one, please [use the issue templates](https://github.com/PipedreamHQ/pipedream/issues/new/choose).
+
+## Security
+
+You can read about our platform security and privacy [here](https://pipedream.com/docs/privacy-and-security/).
+
+If you'd like to report a suspected vulnerability or security issue, or have any questions about the security of the product, please contact our security team at **security@pipedream.com**.
